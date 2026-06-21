@@ -5,14 +5,14 @@ Overview
 
 HRIS (Human Resource Information System) is a web application built with ASP.NET Core MVC that helps manage employee records efficiently.
 
-Features
+Features: 
 Create new employees
 View employee details
 Update employee information
 Delete employee records
 Filter employees by first name
 
-Technologies Used
+Technologies Used: 
 ASP.NET Core MVC
 C#
 Entity Framework Core
@@ -24,7 +24,7 @@ Configure the database connection string.
 Run Entity Framework migrations.
 Start the application.
 
-Future Enhancements
+Future Enhancements:  
 Employee search by department
 Role-based authentication
 Employee dashboard and reporting
