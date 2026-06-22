@@ -52,20 +52,36 @@ namespace HRIS.Controllers
         }
 
 
-
-        public IActionResult Edit(int id)
+        [HttpGet]
+        public IActionResult Edit(int? id)
         {
 
             var employee = _context.Employees.Find(id);
 
-            if(employee == null)
+            if(id == null)
             {
-                return RedirectToAction("Index", "Employee");
+                return NotFound();
             }
 
+            return View(employee);
+        }
 
+        [HttpPost]
+        public async Task<IActionResult> Edit(int? id, Employee employee)
+        {
 
-            return View();
+            if (id != employee.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid) {
+                _context.Update(employee);
+                await _context.SaveChangesAsync();
+            
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }
